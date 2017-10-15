@@ -1,0 +1,10 @@
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\Debug\AplicacionEscritorio.exe
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\Debug\AplicacionEscritorio.pdb
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.csprojResolveAssemblyReference.cache
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.Form1.resources
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.Properties.Resources.resources
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.csproj.GenerateResource.Cache
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.exe
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.pdb
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\Interop.ORAOLEDBLib.dll
+c:\users\portafolio\documents\visual studio 2010\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Debug\AplicacionEscritorio.csproj.ResolveComReference.cache

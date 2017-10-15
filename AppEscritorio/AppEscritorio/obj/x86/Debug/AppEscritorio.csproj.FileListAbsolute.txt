@@ -1,0 +1,19 @@
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\bin\Debug\AppEscritorio.exe
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\bin\Debug\AppEscritorio.pdb
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csprojResolveAssemblyReference.cache
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Form1.resources
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Properties.Resources.resources
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csproj.GenerateResource.Cache
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.exe
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.pdb
+C:\Users\Portafolio\Documents\Visual Studio 2010\Projects\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantAct.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.exe
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.pdb
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\bin\Debug\AppEscritorio.exe
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\bin\Debug\AppEscritorio.pdb
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csprojResolveAssemblyReference.cache
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Form1.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantAct.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Properties.Resources.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csproj.GenerateResource.Cache
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Menu.resources
