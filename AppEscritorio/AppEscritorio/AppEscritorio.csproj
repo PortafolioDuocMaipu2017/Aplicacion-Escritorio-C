@@ -65,6 +65,24 @@
     <Compile Include="MantCliente.Designer.cs">
       <DependentUpon>MantCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="MantContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantContrato.Designer.cs">
+      <DependentUpon>MantContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantRol.Designer.cs">
+      <DependentUpon>MantRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantServicio.Designer.cs">
+      <DependentUpon>MantServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +99,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantCliente.resx">
       <DependentUpon>MantCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantContrato.resx">
+      <DependentUpon>MantContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantRol.resx">
+      <DependentUpon>MantRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantServicio.resx">
+      <DependentUpon>MantServicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -37,5 +37,26 @@ namespace AppEscritorio
             MantCliente cli = new MantCliente();
             cli.Show();
         }
+
+        private void btn_TipoContrato_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantContrato ventana = new MantContrato();
+            ventana.Show();
+        }
+
+        private void btn_TipoServicio_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantServicio serv = new MantServicio();
+            serv.Show();
+        }
+
+        private void btn_TipoRol_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantRol rol = new MantRol();
+            rol.Show();
+        }
     }
 }

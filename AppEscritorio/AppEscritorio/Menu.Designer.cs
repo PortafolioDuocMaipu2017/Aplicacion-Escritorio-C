@@ -74,6 +74,7 @@
             this.btn_TipoContrato.TabIndex = 3;
             this.btn_TipoContrato.Text = "Mantenedor de Tipo de Contrato";
             this.btn_TipoContrato.UseVisualStyleBackColor = true;
+            this.btn_TipoContrato.Click += new System.EventHandler(this.btn_TipoContrato_Click);
             // 
             // btn_TipoCliente
             // 
@@ -93,6 +94,7 @@
             this.btn_TipoServicio.TabIndex = 5;
             this.btn_TipoServicio.Text = "Mantenedor de Tipo de Servicio";
             this.btn_TipoServicio.UseVisualStyleBackColor = true;
+            this.btn_TipoServicio.Click += new System.EventHandler(this.btn_TipoServicio_Click);
             // 
             // btn_TipoRol
             // 
@@ -102,6 +104,7 @@
             this.btn_TipoRol.TabIndex = 6;
             this.btn_TipoRol.Text = "Mantenedor de Tipo de Roles";
             this.btn_TipoRol.UseVisualStyleBackColor = true;
+            this.btn_TipoRol.Click += new System.EventHandler(this.btn_TipoRol_Click);
             // 
             // Menu
             // 

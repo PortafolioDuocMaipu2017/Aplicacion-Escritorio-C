@@ -18,3 +18,6 @@ C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEs
 C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csproj.GenerateResource.Cache
 C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Menu.resources
 C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantCliente.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantContrato.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantRol.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantServicio.resources
