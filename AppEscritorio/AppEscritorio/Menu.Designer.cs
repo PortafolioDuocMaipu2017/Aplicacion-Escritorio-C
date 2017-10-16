@@ -35,6 +35,8 @@
             this.btn_TipoCliente = new System.Windows.Forms.Button();
             this.btn_TipoServicio = new System.Windows.Forms.Button();
             this.btn_TipoRol = new System.Windows.Forms.Button();
+            this.btn_Clientes_Click = new System.Windows.Forms.Button();
+            this.btn_Destinos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -58,7 +60,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(179, 227);
+            this.btnCerrar.Location = new System.Drawing.Point(179, 287);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(93, 23);
             this.btnCerrar.TabIndex = 2;
@@ -106,11 +108,33 @@
             this.btn_TipoRol.UseVisualStyleBackColor = true;
             this.btn_TipoRol.Click += new System.EventHandler(this.btn_TipoRol_Click);
             // 
+            // btn_Clientes_Click
+            // 
+            this.btn_Clientes_Click.Location = new System.Drawing.Point(57, 206);
+            this.btn_Clientes_Click.Name = "btn_Clientes_Click";
+            this.btn_Clientes_Click.Size = new System.Drawing.Size(175, 23);
+            this.btn_Clientes_Click.TabIndex = 7;
+            this.btn_Clientes_Click.Text = "Mantenedor de Clientes";
+            this.btn_Clientes_Click.UseVisualStyleBackColor = true;
+            this.btn_Clientes_Click.Click += new System.EventHandler(this.btn_Clientes_Click_Click);
+            // 
+            // btn_Destinos
+            // 
+            this.btn_Destinos.Location = new System.Drawing.Point(57, 236);
+            this.btn_Destinos.Name = "btn_Destinos";
+            this.btn_Destinos.Size = new System.Drawing.Size(175, 23);
+            this.btn_Destinos.TabIndex = 8;
+            this.btn_Destinos.Text = "Mantenedor de Destinos";
+            this.btn_Destinos.UseVisualStyleBackColor = true;
+            this.btn_Destinos.Click += new System.EventHandler(this.btn_Destinos_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(284, 347);
+            this.Controls.Add(this.btn_Destinos);
+            this.Controls.Add(this.btn_Clientes_Click);
             this.Controls.Add(this.btn_TipoRol);
             this.Controls.Add(this.btn_TipoServicio);
             this.Controls.Add(this.btn_TipoCliente);
@@ -134,5 +158,7 @@
         private System.Windows.Forms.Button btn_TipoCliente;
         private System.Windows.Forms.Button btn_TipoServicio;
         private System.Windows.Forms.Button btn_TipoRol;
+        private System.Windows.Forms.Button btn_Clientes_Click;
+        private System.Windows.Forms.Button btn_Destinos;
     }
 }

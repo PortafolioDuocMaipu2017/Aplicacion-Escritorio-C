@@ -115,5 +115,10 @@ namespace AppEscritorio
             Menu menu = new Menu();
             menu.Show(); 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -58,5 +58,19 @@ namespace AppEscritorio
             MantRol rol = new MantRol();
             rol.Show();
         }
+
+        private void btn_Clientes_Click_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantCli cli = new MantCli();
+            cli.Show();
+        }
+
+        private void btn_Destinos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantDestinos Dest = new MantDestinos();
+            Dest.Show();
+        }
     }
 }

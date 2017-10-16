@@ -28,8 +28,8 @@ namespace AppEscritorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=PORTAFOLIO-PC\SQLEXPRESS;Initial Catalog=Portafolio;Integrated Security=True");
-            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) from Login where Usuario='"+textBox1.Text+"' and Contraseña='"+textBox2.Text+"'", con);
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OL9C22K\JAVIER;Initial Catalog=Portafolio;Integrated Security=True");
+            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) from Usuario where Usuario='"+textBox1.Text+"' and Contraseña='"+textBox2.Text+"'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
