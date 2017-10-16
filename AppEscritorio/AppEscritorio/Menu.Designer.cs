@@ -30,6 +30,11 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btn_TipoContrato = new System.Windows.Forms.Button();
+            this.btn_TipoCliente = new System.Windows.Forms.Button();
+            this.btn_TipoServicio = new System.Windows.Forms.Button();
+            this.btn_TipoRol = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -51,11 +56,63 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenido a Mantenedores";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(179, 227);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(93, 23);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.Text = "Cerrar Sesion";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btn_TipoContrato
+            // 
+            this.btn_TipoContrato.Location = new System.Drawing.Point(57, 118);
+            this.btn_TipoContrato.Name = "btn_TipoContrato";
+            this.btn_TipoContrato.Size = new System.Drawing.Size(175, 23);
+            this.btn_TipoContrato.TabIndex = 3;
+            this.btn_TipoContrato.Text = "Mantenedor de Tipo de Contrato";
+            this.btn_TipoContrato.UseVisualStyleBackColor = true;
+            // 
+            // btn_TipoCliente
+            // 
+            this.btn_TipoCliente.Location = new System.Drawing.Point(57, 89);
+            this.btn_TipoCliente.Name = "btn_TipoCliente";
+            this.btn_TipoCliente.Size = new System.Drawing.Size(175, 23);
+            this.btn_TipoCliente.TabIndex = 4;
+            this.btn_TipoCliente.Text = "Mantenedor de Tipo de Cliente";
+            this.btn_TipoCliente.UseVisualStyleBackColor = true;
+            this.btn_TipoCliente.Click += new System.EventHandler(this.btn_TipoCliente_Click);
+            // 
+            // btn_TipoServicio
+            // 
+            this.btn_TipoServicio.Location = new System.Drawing.Point(57, 147);
+            this.btn_TipoServicio.Name = "btn_TipoServicio";
+            this.btn_TipoServicio.Size = new System.Drawing.Size(175, 23);
+            this.btn_TipoServicio.TabIndex = 5;
+            this.btn_TipoServicio.Text = "Mantenedor de Tipo de Servicio";
+            this.btn_TipoServicio.UseVisualStyleBackColor = true;
+            // 
+            // btn_TipoRol
+            // 
+            this.btn_TipoRol.Location = new System.Drawing.Point(57, 176);
+            this.btn_TipoRol.Name = "btn_TipoRol";
+            this.btn_TipoRol.Size = new System.Drawing.Size(175, 23);
+            this.btn_TipoRol.TabIndex = 6;
+            this.btn_TipoRol.Text = "Mantenedor de Tipo de Roles";
+            this.btn_TipoRol.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.btn_TipoRol);
+            this.Controls.Add(this.btn_TipoServicio);
+            this.Controls.Add(this.btn_TipoCliente);
+            this.Controls.Add(this.btn_TipoContrato);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Menu";
@@ -69,5 +126,10 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btn_TipoContrato;
+        private System.Windows.Forms.Button btn_TipoCliente;
+        private System.Windows.Forms.Button btn_TipoServicio;
+        private System.Windows.Forms.Button btn_TipoRol;
     }
 }

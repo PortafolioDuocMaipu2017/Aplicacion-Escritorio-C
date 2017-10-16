@@ -22,5 +22,20 @@ namespace AppEscritorio
             MantAct ss = new MantAct();
             ss.Show();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ha Cerrado Sesion.");
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+        }
+
+        private void btn_TipoCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantCliente cli = new MantCliente();
+            cli.Show();
+        }
     }
 }
