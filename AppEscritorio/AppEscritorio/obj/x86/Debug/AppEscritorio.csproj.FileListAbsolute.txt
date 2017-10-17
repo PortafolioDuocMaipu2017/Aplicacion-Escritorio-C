@@ -53,3 +53,5 @@ C:\Users\Javier\Desktop\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.
 C:\Users\Javier\Desktop\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Menu.resources
 C:\Users\Javier\Desktop\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.Properties.Resources.resources
 C:\Users\Javier\Desktop\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.csproj.GenerateResource.Cache
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantCli.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\AppEscritorio\AppEscritorio\obj\x86\Debug\AppEscritorio.MantDestinos.resources

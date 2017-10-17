@@ -66,11 +66,11 @@ namespace AppEscritorio
             cli.Show();
         }
 
-        private void btn_Destinos_Click(object sender, EventArgs e)
+        private void btnDestinox_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MantDestinos Dest = new MantDestinos();
-            Dest.Show();
+            MantDestinos des = new MantDestinos();
+            des.Show();
         }
     }
 }

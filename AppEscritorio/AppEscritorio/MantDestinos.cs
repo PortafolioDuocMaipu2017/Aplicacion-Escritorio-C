@@ -12,7 +12,7 @@ namespace AppEscritorio
     public partial class MantDestinos : Form
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OL9C22K\JAVIER;Initial Catalog=Portafolio;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=PORTAFOLIO-PC\SQLEXPRESS;Initial Catalog=Portafolio;Integrated Security=True");  
         SqlCommand cmd;
         SqlDataAdapter adapt;
 
@@ -27,7 +27,7 @@ namespace AppEscritorio
         {
             con.Open();
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from destino", con);
+            adapt = new SqlDataAdapter("select * from TipoDestino", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
@@ -35,7 +35,6 @@ namespace AppEscritorio
 
         private void ClearData()
         {
-            txtId.Text = "";
             txtNombre.Text = "";
             ID = 0;
         }
@@ -43,17 +42,15 @@ namespace AppEscritorio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtId.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "" && txtNombre.Text != "")
+            if (txtNombre.Text != "")
             {
-                cmd = new SqlCommand("insert into destino(id,nombre) values(@id,@nombre)", con);
+                cmd = new SqlCommand("insert into TipoDestino(nombre) values(@nombre)", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
                 cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -70,11 +67,11 @@ namespace AppEscritorio
 
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "" && txtNombre.Text != "")
+            if (txtNombre.Text != "")
             {
-                cmd = new SqlCommand("update destino set id=@id, nombre=@nombre where id=@Id", con);
+                cmd = new SqlCommand("update TipoDestino set nombre=@nombre where id=@Id", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
+                cmd.Parameters.AddWithValue("@id", ID);
                 cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Datos Actualizados");
@@ -92,9 +89,9 @@ namespace AppEscritorio
         {
             try
             {
-                cmd = new SqlCommand("delete destino where id=@id", con);
+                cmd = new SqlCommand("delete TipoDestino where id=@id", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
+                cmd.Parameters.AddWithValue("@id", ID);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Borrado Correctamente!");
