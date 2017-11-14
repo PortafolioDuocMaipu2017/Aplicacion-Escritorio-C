@@ -1,0 +1,10 @@
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\bin\Debug\AppEscritorioPortafolio.exe.config
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\bin\Debug\AppEscritorioPortafolio.exe
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\bin\Debug\AppEscritorioPortafolio.pdb
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.csprojResolveAssemblyReference.cache
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.Form1.resources
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.Properties.Resources.resources
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.csproj.GenerateResource.Cache
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.exe
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AppEscritorioPortafolio\obj\Debug\AppEscritorioPortafolio.pdb

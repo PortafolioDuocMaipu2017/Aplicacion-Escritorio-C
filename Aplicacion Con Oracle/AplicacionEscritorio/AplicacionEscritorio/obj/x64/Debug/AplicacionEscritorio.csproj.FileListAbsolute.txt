@@ -1,0 +1,11 @@
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x64\Debug\AplicacionEscritorio.exe.config
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x64\Debug\AplicacionEscritorio.exe
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x64\Debug\AplicacionEscritorio.pdb
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.csprojResolveAssemblyReference.cache
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.Form1.resources
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.Properties.Resources.resources
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.csproj.GenerateResource.Cache
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.exe
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.pdb
+C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.Login.resources

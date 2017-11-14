@@ -1,0 +1,9 @@
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x86\Release\AplicacionEscritorio.exe.config
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x86\Release\AplicacionEscritorio.exe
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\bin\x86\Release\AplicacionEscritorio.pdb
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.csprojResolveAssemblyReference.cache
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.Form1.resources
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.Properties.Resources.resources
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.csproj.GenerateResource.Cache
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.exe
+c:\users\koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x86\Release\AplicacionEscritorio.pdb
