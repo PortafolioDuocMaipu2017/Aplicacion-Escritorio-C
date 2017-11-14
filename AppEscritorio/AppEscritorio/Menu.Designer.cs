@@ -36,7 +36,7 @@
             this.btn_TipoServicio = new System.Windows.Forms.Button();
             this.btn_TipoRol = new System.Windows.Forms.Button();
             this.btn_Clientes_Click = new System.Windows.Forms.Button();
-            this.btn_Destinos = new System.Windows.Forms.Button();
+            this.btnDestinox = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -118,22 +118,22 @@
             this.btn_Clientes_Click.UseVisualStyleBackColor = true;
             this.btn_Clientes_Click.Click += new System.EventHandler(this.btn_Clientes_Click_Click);
             // 
-            // btn_Destinos
+            // btnDestinox
             // 
-            this.btn_Destinos.Location = new System.Drawing.Point(57, 236);
-            this.btn_Destinos.Name = "btn_Destinos";
-            this.btn_Destinos.Size = new System.Drawing.Size(175, 23);
-            this.btn_Destinos.TabIndex = 8;
-            this.btn_Destinos.Text = "Mantenedor de Destinos";
-            this.btn_Destinos.UseVisualStyleBackColor = true;
-            this.btn_Destinos.Click += new System.EventHandler(this.btn_Destinos_Click);
+            this.btnDestinox.Location = new System.Drawing.Point(57, 235);
+            this.btnDestinox.Name = "btnDestinox";
+            this.btnDestinox.Size = new System.Drawing.Size(175, 23);
+            this.btnDestinox.TabIndex = 8;
+            this.btnDestinox.Text = "Mantenedor de Destinos";
+            this.btnDestinox.UseVisualStyleBackColor = true;
+            this.btnDestinox.Click += new System.EventHandler(this.btnDestinox_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 347);
-            this.Controls.Add(this.btn_Destinos);
+            this.Controls.Add(this.btnDestinox);
             this.Controls.Add(this.btn_Clientes_Click);
             this.Controls.Add(this.btn_TipoRol);
             this.Controls.Add(this.btn_TipoServicio);
@@ -159,6 +159,6 @@
         private System.Windows.Forms.Button btn_TipoServicio;
         private System.Windows.Forms.Button btn_TipoRol;
         private System.Windows.Forms.Button btn_Clientes_Click;
-        private System.Windows.Forms.Button btn_Destinos;
+        private System.Windows.Forms.Button btnDestinox;
     }
 }

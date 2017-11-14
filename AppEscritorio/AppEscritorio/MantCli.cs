@@ -12,7 +12,7 @@ namespace AppEscritorio
 {
     public partial class MantCli : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-OL9C22K\JAVIER;Initial Catalog=Portafolio;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=PORTAFOLIO-PC\SQLEXPRESS;Initial Catalog=Portafolio;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adapt;
 
@@ -37,8 +37,8 @@ namespace AppEscritorio
 
         private void ClearData()
         {
-            txtId.Text = "";
-            txtDescripcion.Text = "";
+            txtRut.Text = "";
+            txtNombre.Text = "";
             txtIdTipoCliente.Text = "";
             txtIdAgencia.Text = "";
             ID = 0;
@@ -47,20 +47,20 @@ namespace AppEscritorio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtId.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDescripcion.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtRut.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtIdTipoCliente.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtIdAgencia.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "" && txtDescripcion.Text != "" && txtIdTipoCliente.Text !="" && txtIdAgencia.Text !="")
+            if (txtRut.Text != "" && txtNombre.Text != "" && txtIdTipoCliente.Text !="" && txtIdAgencia.Text !="")
             {
-                cmd = new SqlCommand("insert into cliente(id,descripcion,tipocliente_id,agencia_id) values(@id,@descripcion,@idTipoCliente,@idAgencia)", con);
+                cmd = new SqlCommand("insert into cliente(rut,nombre,TipoCliente_ID,Agencia_ID) values(@rut,@nombre,@idTipoCliente,@idAgencia)", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
-                cmd.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
+                cmd.Parameters.AddWithValue("@rut", txtRut.Text);
+                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                 cmd.Parameters.AddWithValue("@idTipoCliente",Convert.ToInt32(txtIdTipoCliente.Text));
                 cmd.Parameters.AddWithValue("@idAgencia",Convert.ToInt32(txtIdAgencia.Text));
                 cmd.ExecuteNonQuery();
@@ -78,12 +78,13 @@ namespace AppEscritorio
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "" && txtDescripcion.Text != "" && txtIdTipoCliente.Text != "" && txtIdAgencia.Text != "")
+            if (txtRut.Text != "" && txtNombre.Text != "" && txtIdTipoCliente.Text != "" && txtIdAgencia.Text != "")
             {
-                cmd = new SqlCommand("update cliente set id=@id, descripcion=@descripcion, tipocliente_id=@idTipoCliente, agencia_id=@idAgencia where id=@Id", con);
+                cmd = new SqlCommand("update cliente set Rut=@rut, nombre=@nombre, TipoCliente_ID=@idTipoCliente, Agencia_ID=@idAgencia where id=@Id", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
-                cmd.Parameters.AddWithValue("@descripcion", txtDescripcion.Text);
+                cmd.Parameters.AddWithValue("@id", ID);
+                cmd.Parameters.AddWithValue("@rut", txtRut.Text);
+                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                 cmd.Parameters.AddWithValue("@idTipoCliente", Convert.ToInt32(txtIdTipoCliente.Text));
                 cmd.Parameters.AddWithValue("@idAgencia", Convert.ToInt32(txtIdAgencia.Text));
                 cmd.ExecuteNonQuery();
@@ -104,7 +105,7 @@ namespace AppEscritorio
             {
                 cmd = new SqlCommand("delete cliente where id=@id", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtId.Text));
+                cmd.Parameters.AddWithValue("@id", ID);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Borrado Correctamente!");
