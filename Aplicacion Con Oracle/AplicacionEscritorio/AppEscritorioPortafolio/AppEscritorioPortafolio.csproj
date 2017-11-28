@@ -88,6 +88,42 @@
     <Compile Include="MantActividades.Designer.cs">
       <DependentUpon>MantActividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="MantCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantCiudad.Designer.cs">
+      <DependentUpon>MantCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantDestinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantDestinos.Designer.cs">
+      <DependentUpon>MantDestinos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantPais.Designer.cs">
+      <DependentUpon>MantPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantRol.Designer.cs">
+      <DependentUpon>MantRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantTipoServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantTipoServicio.Designer.cs">
+      <DependentUpon>MantTipoServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantUsuarios.Designer.cs">
+      <DependentUpon>MantUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +152,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantActividades.resx">
       <DependentUpon>MantActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantCiudad.resx">
+      <DependentUpon>MantCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantDestinos.resx">
+      <DependentUpon>MantDestinos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantPais.resx">
+      <DependentUpon>MantPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantRol.resx">
+      <DependentUpon>MantRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantTipoServicio.resx">
+      <DependentUpon>MantTipoServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantUsuarios.resx">
+      <DependentUpon>MantUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

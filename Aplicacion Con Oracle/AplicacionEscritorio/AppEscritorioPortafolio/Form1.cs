@@ -28,6 +28,8 @@ namespace AppEscritorioPortafolio
                     MessageBox.Show(" Ingresa el Usuario y Contraseña .");
                     return;
                 }
+                
+
                 string ConString = "Data Source=XE;User Id=system;Password=12345;";
                 using (OracleConnection con = new OracleConnection(ConString))
                 {
@@ -35,22 +37,35 @@ namespace AppEscritorioPortafolio
                     OracleCommand cmd = new OracleCommand("SELECT * FROM Usuario where loginUsuario=:user_name and pw=:pswd", con);
                     cmd.Parameters.Add(new OracleParameter(":user_name", textBox1.Text.Trim()));
                     cmd.Parameters.Add(new OracleParameter(":pswd", textBox2.Text.Trim()));
-
+                    
                     OracleDataAdapter da = new OracleDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
+                    String wea = "0";
+                    try
+                    {
+                        wea = ds.Tables[0].Rows[0]["estado"].ToString();
+                    }
+                    catch (Exception es)
+                    {
+                        MessageBox.Show("No Usuario Registrado O  Nombre/Password Erronea");
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                    }
+                                    
+
                     int i = ds.Tables[0].Rows.Count;
-                    if (i == 1)
+                    if (i == 1 && wea == "1")
                     {
                         MessageBox.Show("Sesion Iniciada Correctamente");
                         this.Hide();
-                        MantActividades act = new MantActividades();
-                        act.Show();
+                        Menu menu = new Menu();
+                        menu.Show();
                         
                     }
-                    else
+                    if (i == 1 && wea != "1")
                     {
-                        MessageBox.Show("No Usuario Registrado O  Nombre/Password Erronea");
+                        MessageBox.Show("El usuario no esta Habilitado");
                         textBox1.Text = "";
                         textBox2.Text = "";
                     }

@@ -8,23 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
-using System.Configuration;
-using System.Data.OleDb;
-
 namespace AppEscritorioPortafolio
 {
-    public partial class MantActividades : Form
+    public partial class MantCiudad : Form
     {
         OracleDataAdapter da = new OracleDataAdapter();
 
-        public MantActividades()
+        public MantCiudad()
         {
             InitializeComponent();
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
         OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
-        
+
         OracleCommand cmd;
         OracleDataAdapter adapt;
 
@@ -33,44 +30,58 @@ namespace AppEscritorioPortafolio
         {
             con.Open();
             DataTable dt = new DataTable();
-
-            adapt = new OracleDataAdapter("select * from Tipo_Actividad", con);
+            adapt = new OracleDataAdapter("select * from Ciudad", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            //Mostrar ComboBox
+            con.Open();
+            DataTable dt2 = new DataTable();
+            adapt = new OracleDataAdapter("select * from Pais", con);
+            adapt.Fill(dt2);
+
+            comboBox1.DataSource = dt2;
+            comboBox1.DisplayMember = "nombrePais"; //campo que queres mostrar
+            comboBox1.ValueMember = "codigoPais"; //valor que capturas
+            con.Close();
+
         }
         //Clear Data  
         private void ClearData()
         {
-            txtNombre.Text = "";
+            txtCiudad.Text = "";
             ID = 0;
             btnCrear.Enabled = true;
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
         }
+        
         //dataGridView1 RowHeaderMouseClick Event  
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            comboBox1.SelectedValue = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            txtCiudad.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
         }
         
         private void btnCrear_Click(object sender, EventArgs e)
-        {          
+        {
             try
             {
-                if (txtNombre.Text != "")
+                if (txtCiudad.Text != "")
                 {
-                    string codigo = "insert into Tipo_Actividad (nombreTipoActividad) values(:nombre) ";
+                    string codigo = "insert into Ciudad (codigopais, ciudad) values(:pais,:ciudad) ";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
-                    cmd.Parameters.Add(":nombre", txtNombre.Text);
+                    cmd.Parameters.Add(":pais", comboBox1.SelectedValue);
+                    cmd.Parameters.Add(":ciudad", txtCiudad.Text);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos Actualizados");
                     con.Close();
@@ -84,7 +95,7 @@ namespace AppEscritorioPortafolio
             }
             catch (Exception esse)
             {
-
+                con.Close();
                 MessageBox.Show(esse.ToString());
             }
         }
@@ -94,15 +105,16 @@ namespace AppEscritorioPortafolio
         {
             try
             {
-                if (txtNombre.Text != "")
+                if (txtCiudad.Text != "")
                 {
-                    string update = "update Tipo_Actividad set nombreTipoActividad = :nombre where codigoTipoActividad = :id";
+                    string update = "update Ciudad set codigopais = :pais, ciudad =:ciudad where codigoCiudad = :id";
                     cmd = new OracleCommand(update, con);
-                    
+
                     con.Open();
-                    cmd.Parameters.Add(":nombre", txtNombre.Text);
-                    cmd.Parameters.Add(":id", ID);                    
-                    MessageBox.Show(ID + txtNombre.Text + update);
+                    cmd.Parameters.Add(":pais", comboBox1.SelectedValue);
+                    cmd.Parameters.Add(":ciudad", txtCiudad.Text);
+                    cmd.Parameters.Add(":id", ID);
+                    MessageBox.Show(ID + txtCiudad.Text + update);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos Actualizados");
                     con.Close();
@@ -121,7 +133,7 @@ namespace AppEscritorioPortafolio
                 MessageBox.Show(esse.ToString());
                 con.Close();
             }
-            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -130,7 +142,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Tipo_Actividad where codigoTipoActividad=:id";
+                    string codigo = "delete Ciudad where codigoCiudad=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
@@ -151,7 +163,7 @@ namespace AppEscritorioPortafolio
                 MessageBox.Show(essse.ToString());
                 con.Close();
             }
-           
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -164,6 +176,12 @@ namespace AppEscritorioPortafolio
         {
             ClearData();
         }
-    }
 
- }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MantPais pais = new MantPais();
+            pais.Show();
+        }
+    }
+}
