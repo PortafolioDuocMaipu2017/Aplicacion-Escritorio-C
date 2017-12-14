@@ -148,7 +148,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCrear);
             this.Name = "MantTipoServicio";
-            this.Text = "MantTipoServicio";
+            this.Text = "Mantenedor de Tipo Servicio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

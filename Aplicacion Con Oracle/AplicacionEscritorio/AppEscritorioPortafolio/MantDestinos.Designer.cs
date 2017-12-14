@@ -181,7 +181,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCrear);
             this.Name = "MantDestinos";
-            this.Text = "MantDestinos";
+            this.Text = "Mantenedor de Destinos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

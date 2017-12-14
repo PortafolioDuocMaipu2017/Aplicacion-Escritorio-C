@@ -149,7 +149,7 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.label1);
             this.Name = "MantRol";
-            this.Text = "MantRol";
+            this.Text = "Mantenedor de Rol";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

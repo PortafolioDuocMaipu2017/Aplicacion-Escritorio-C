@@ -161,7 +161,7 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.label1);
             this.Name = "MantCiudad";
-            this.Text = "MantCiudad";
+            this.Text = "Mantenedor de Ciudad";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

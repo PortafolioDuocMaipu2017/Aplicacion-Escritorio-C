@@ -190,7 +190,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Name = "MantUsuarios";
-            this.Text = "MantUsuarios";
+            this.Text = "Mantenedor de Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,3 +9,4 @@ C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\Aplic
 C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.exe
 C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.pdb
 C:\Users\Koyuki\documents\visual studio 2015\Projects\AplicacionEscritorio\AplicacionEscritorio\obj\x64\Debug\AplicacionEscritorio.Login.resources
+C:\Users\Portafolio\Documents\GitHub\Aplicacion-Escritorio-C\Aplicacion Con Oracle\AplicacionEscritorio\AplicacionEscritorio\bin\x64\Debug\AplicacionEscritorio.exe.config

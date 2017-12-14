@@ -65,17 +65,21 @@ namespace AppEscritorioPortafolio
                         menu.Show();
                         
                     }
-                    if (wea2 != "administrador")
+                    if (i == 1 && wea != "1" && wea2 != "administrador")
                     {
-                        MessageBox.Show("El usuario no es Administrador, es "+ wea2);
+                        MessageBox.Show("El usuario no es Administrador, es " + wea2);
                         textBox1.Text = "";
                         textBox2.Text = "";
                     }
                     if (i == 1 && wea != "1")
                     {
-                        MessageBox.Show("El usuario no esta Habilitado");
-                        textBox1.Text = "";
-                        textBox2.Text = "";
+                        
+                        
+                            MessageBox.Show("El usuario no esta Habilitado");
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                        
+                        
                     }
                 }
             }

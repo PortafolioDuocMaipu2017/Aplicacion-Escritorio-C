@@ -128,7 +128,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "MantActividades";
-            this.Text = "MantActividades";
+            this.Text = "Mantenedor de Tipo Actividades";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

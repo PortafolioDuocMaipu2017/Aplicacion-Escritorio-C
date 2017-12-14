@@ -128,7 +128,7 @@
             this.Controls.Add(this.txtPais);
             this.Controls.Add(this.label1);
             this.Name = "MantPais";
-            this.Text = "MantPais";
+            this.Text = "Mantenedor de Pais";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
