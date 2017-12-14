@@ -21,7 +21,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleDataAdapter adapt;
@@ -32,7 +32,7 @@ namespace AppEscritorioPortafolio
             con.Open();
             DataTable dt = new DataTable();
 
-            adapt = new OracleDataAdapter("select * from Tipo_Servicio", con);
+            adapt = new OracleDataAdapter("select * from TipoServicio", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
@@ -42,7 +42,6 @@ namespace AppEscritorioPortafolio
         //Clear Data  
         private void ClearData()
         {
-            txtEmpresa.Text = "";
             txtDescripcion.Text = "";
             txtValor.Text = "";
             ID = 0;
@@ -54,9 +53,8 @@ namespace AppEscritorioPortafolio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtEmpresa.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtDescripcion.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtValor.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtDescripcion.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtValor.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
@@ -66,13 +64,12 @@ namespace AppEscritorioPortafolio
         {
             try
             {
-                if (txtEmpresa.Text != "" && txtDescripcion.Text != "")
+                if (txtDescripcion.Text != "")
                 {
-                    string codigo = "insert into Tipo_Servicio (codigoEmpresa, descripcionServicio, valoresServicio) values(:empresa,:descripcion, :valor) ";
+                    string codigo = "insert into TipoServicio (idtiposervicio, descripcionservicio, valorservicio) values(1,:descripcion, :valor) ";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
-                    cmd.Parameters.Add(":empresa", txtEmpresa.Text);
                     cmd.Parameters.Add(":descripcion", txtDescripcion.Text);
                     cmd.Parameters.Add(":valor", Convert.ToDecimal(txtValor.Text));
                     cmd.ExecuteNonQuery();
@@ -98,17 +95,16 @@ namespace AppEscritorioPortafolio
         {
             try
             {
-                if (txtEmpresa.Text != "" && txtDescripcion.Text!= "")
+                if (txtDescripcion.Text != "")
                 {
-                    string update = "update Tipo_Servicio set codigoEmpresa = :empresa, descripcionServicio = :descripcion, valoresServicio = :valor where codigoTipoServicio = :id";
+                    string update = "update TipoServicio set descripcionServicio = :descripcion, valorServicio = :valor where idtiposervicio = :id";
                     cmd = new OracleCommand(update, con);
 
                     con.Open();
-                    cmd.Parameters.Add(":empresa", txtEmpresa.Text);
                     cmd.Parameters.Add(":descripcion", txtDescripcion.Text);
-                    cmd.Parameters.Add(":valor", txtValor.Text);
+                    cmd.Parameters.Add(":valor", Convert.ToDecimal(txtValor.Text));
                     cmd.Parameters.Add(":id", ID);
-                    MessageBox.Show(ID + txtEmpresa.Text + update);
+                    MessageBox.Show(ID + txtDescripcion.Text + update);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos Actualizados");
                     con.Close();
@@ -136,7 +132,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Tipo_Servicio where codigoTipoServicio=:id";
+                    string codigo = "delete TipoServicio where idtiposervicio=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();

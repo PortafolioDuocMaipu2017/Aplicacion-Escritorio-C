@@ -23,7 +23,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
         
         OracleCommand cmd;
         OracleDataAdapter adapt;
@@ -34,7 +34,7 @@ namespace AppEscritorioPortafolio
             con.Open();
             DataTable dt = new DataTable();
 
-            adapt = new OracleDataAdapter("select * from Tipo_Actividad", con);
+            adapt = new OracleDataAdapter("select * from tipoactividad", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
@@ -66,7 +66,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtNombre.Text != "")
                 {
-                    string codigo = "insert into Tipo_Actividad (nombreTipoActividad) values(:nombre) ";
+                    string codigo = "insert into tipoactividad (idtipoactividad,nombreTipoActividad) values(1,:nombre) ";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
@@ -96,7 +96,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtNombre.Text != "")
                 {
-                    string update = "update Tipo_Actividad set nombreTipoActividad = :nombre where codigoTipoActividad = :id";
+                    string update = "update tipoactividad set nombreTipoActividad = :nombre where idtipoactividad = :id";
                     cmd = new OracleCommand(update, con);
                     
                     con.Open();
@@ -130,7 +130,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Tipo_Actividad where codigoTipoActividad=:id";
+                    string codigo = "delete tipoactividad where idtipoactividad=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();

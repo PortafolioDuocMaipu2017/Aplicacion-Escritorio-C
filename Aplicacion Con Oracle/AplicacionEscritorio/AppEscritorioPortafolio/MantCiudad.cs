@@ -20,7 +20,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleDataAdapter adapt;
@@ -45,7 +45,7 @@ namespace AppEscritorioPortafolio
 
             comboBox1.DataSource = dt2;
             comboBox1.DisplayMember = "nombrePais"; //campo que queres mostrar
-            comboBox1.ValueMember = "codigoPais"; //valor que capturas
+            comboBox1.ValueMember = "idpais"; //valor que capturas
             con.Close();
 
         }
@@ -63,8 +63,9 @@ namespace AppEscritorioPortafolio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            comboBox1.SelectedValue = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-            txtCiudad.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtCiudad.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            comboBox1.SelectedValue = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
@@ -76,7 +77,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtCiudad.Text != "")
                 {
-                    string codigo = "insert into Ciudad (codigopais, ciudad) values(:pais,:ciudad) ";
+                    string codigo = "insert into Ciudad (pais_idpais, ciudad) values(:pais,:ciudad) ";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
@@ -107,7 +108,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtCiudad.Text != "")
                 {
-                    string update = "update Ciudad set codigopais = :pais, ciudad =:ciudad where codigoCiudad = :id";
+                    string update = "update Ciudad set pais_idpais = :pais, ciudad =:ciudad where idciudad = :id";
                     cmd = new OracleCommand(update, con);
 
                     con.Open();
@@ -142,7 +143,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Ciudad where codigoCiudad=:id";
+                    string codigo = "delete Ciudad where idciudad=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();

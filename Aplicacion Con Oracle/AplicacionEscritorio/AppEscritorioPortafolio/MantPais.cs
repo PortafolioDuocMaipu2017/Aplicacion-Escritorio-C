@@ -22,7 +22,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleDataAdapter adapt;
@@ -65,7 +65,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtPais.Text != "")
                 {
-                    string codigo = "insert into Pais(nombrepais) values(:nombre)";
+                    string codigo = "insert into Pais(idpais, nombrepais) values(1, :nombre)";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
@@ -95,7 +95,7 @@ namespace AppEscritorioPortafolio
             {
                 if (txtPais.Text != "")
                 {
-                    string update = "update Pais set nombrepais = :nombre where codigoPais = :id";
+                    string update = "update Pais set nombrepais = :nombre where idpais = :id";
                     cmd = new OracleCommand(update, con);
 
                     con.Open();
@@ -129,7 +129,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Pais where codigoPais=:id";
+                    string codigo = "delete Pais where idpais= :id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();

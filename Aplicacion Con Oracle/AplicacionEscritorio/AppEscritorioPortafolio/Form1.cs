@@ -30,11 +30,11 @@ namespace AppEscritorioPortafolio
                 }
                 
 
-                string ConString = "Data Source=XE;User Id=system;Password=12345;";
+                string ConString = "Data Source=XE;User Id=PORTAFOLIO2;Password=12345;";
                 using (OracleConnection con = new OracleConnection(ConString))
                 {
 
-                    OracleCommand cmd = new OracleCommand("SELECT * FROM Usuario where loginUsuario=:user_name and pw=:pswd", con);
+                    OracleCommand cmd = new OracleCommand("Select Usuario.NOMBREUSUARIO, Usuario.PW, Usuario.ESTADO, Rol.NOMBREROL from Usuario INNER JOIN Rol ON Usuario.NOMBREUSUARIO = Rol.USUARIO_NOMBREUSUARIO where Usuario.NOMBREUSUARIO =:user_name and Usuario.PW =:pw ", con);
                     cmd.Parameters.Add(new OracleParameter(":user_name", textBox1.Text.Trim()));
                     cmd.Parameters.Add(new OracleParameter(":pswd", textBox2.Text.Trim()));
                     
@@ -42,9 +42,11 @@ namespace AppEscritorioPortafolio
                     DataSet ds = new DataSet();
                     da.Fill(ds);
                     String wea = "0";
+                    String wea2 = "";
                     try
                     {
-                        wea = ds.Tables[0].Rows[0]["estado"].ToString();
+                        wea = ds.Tables[0].Rows[0]["ESTADO"].ToString();
+                        wea2 = ds.Tables[0].Rows[0]["NOMBREROL"].ToString();
                     }
                     catch (Exception es)
                     {
@@ -55,13 +57,19 @@ namespace AppEscritorioPortafolio
                                     
 
                     int i = ds.Tables[0].Rows.Count;
-                    if (i == 1 && wea == "1")
+                    if (i == 1 && wea == "1" && wea2 == "administrador")
                     {
                         MessageBox.Show("Sesion Iniciada Correctamente");
                         this.Hide();
                         Menu menu = new Menu();
                         menu.Show();
                         
+                    }
+                    if (wea2 != "administrador")
+                    {
+                        MessageBox.Show("El usuario no es Administrador, es "+ wea2);
+                        textBox1.Text = "";
+                        textBox2.Text = "";
                     }
                     if (i == 1 && wea != "1")
                     {

@@ -23,7 +23,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleDataAdapter adapt;
@@ -40,11 +40,22 @@ namespace AppEscritorioPortafolio
             con.Close();
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            //Try3
+
+            con.Open();
+            DataTable dt3 = new DataTable();
+            adapt = new OracleDataAdapter("select * from Usuario", con);
+            adapt.Fill(dt3);
+            cbUsuario.DataSource = dt3;
+            cbUsuario.DisplayMember = "nombreusuario"; //campo que queres mostrar
+            cbUsuario.ValueMember = "nombreusuario"; //valor que capturas
+            con.Close();
         }
         //Clear Data  
         private void ClearData()
         {
-            txtUsuario.Text = "";
+
             txtRol.Text = "";
             ID = 0;
             btnCrear.Enabled = true;
@@ -55,8 +66,8 @@ namespace AppEscritorioPortafolio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtUsuario.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtRol.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            cbUsuario.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtRol.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
@@ -66,19 +77,27 @@ namespace AppEscritorioPortafolio
         {
             try
             {
-                if (txtUsuario.Text != "" && txtRol.Text != "")
+                if (txtRol.Text != "")
                 {
-                    string codigo = "insert into Rol (loginUsuario, nombreRol) values(:nombre,:rol) ";
-                    cmd = new OracleCommand(codigo, con);
-                    MessageBox.Show(codigo);
-                    con.Open();
-                    cmd.Parameters.Add(":nombre", txtUsuario.Text);
-                    cmd.Parameters.Add(":rol", txtRol.Text);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Datos Actualizados");
-                    con.Close();
-                    DisplayData();
-                    ClearData();
+                    if (txtRol.Text == "administrador" || txtRol.Text == "ejecutivo" || txtRol.Text == "apoderado")
+                    {
+                        string codigo = "insert into Rol (idrol, nombrerol, usuario_nombreusuario) values(1, :rol ,:nombre) ";
+                        cmd = new OracleCommand(codigo, con);
+                        MessageBox.Show(codigo);
+                        con.Open();
+                        cmd.Parameters.Add(":rol", txtRol.Text);
+                        cmd.Parameters.Add(":nombre", cbUsuario.SelectedValue);                        
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Datos Actualizados");
+                        con.Close();
+                        DisplayData();
+                        ClearData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El rol debe ser 'administrador', 'ejecutivo' o 'apoderado'");
+                    }
+                    
                 }
                 else
                 {
@@ -97,22 +116,30 @@ namespace AppEscritorioPortafolio
         {
             try
             {
-                if (txtUsuario.Text != "" && txtRol.Text != "")
+                if (txtRol.Text != "")
                 {
-                    string update = "update Rol set loginUsuario = :nombre, nombreRol =:rol where codigoRol = :id";
-                    cmd = new OracleCommand(update, con);
+                    if (txtRol.Text == "administrador" || txtRol.Text == "ejecutivo" || txtRol.Text == "apoderado")
+                    {
+                        string update = "update Rol set usuario_nombreusuario = :nombre, nombreRol =:rol where idrol = :id";
+                        cmd = new OracleCommand(update, con);
 
-                    con.Open();
-                    cmd.Parameters.Add(":nombre", txtUsuario.Text);
-                    cmd.Parameters.Add(":nombre", txtRol.Text);
-                    cmd.Parameters.Add(":id", ID);
-                    MessageBox.Show(ID + txtUsuario.Text + update);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Datos Actualizados");
-                    con.Close();
-                    DisplayData();
-                    ClearData();
-                    btnCrear.Enabled = true;
+                        con.Open();
+                        cmd.Parameters.Add(":nombre", cbUsuario.SelectedValue);
+                        cmd.Parameters.Add(":nombre", txtRol.Text);
+                        cmd.Parameters.Add(":id", ID);
+                        MessageBox.Show(ID + txtRol.Text + update);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Datos Actualizados");
+                        con.Close();
+                        DisplayData();
+                        ClearData();
+                        btnCrear.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El rol debe ser 'administrador', 'ejecutivo' o 'apoderado'");
+                    }
+                        
                 }
                 else
                 {
@@ -134,7 +161,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Rol where codigoRol=:id";
+                    string codigo = "delete Rol where idrol=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();

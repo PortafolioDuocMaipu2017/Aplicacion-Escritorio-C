@@ -21,12 +21,12 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleDataAdapter adapt;
 
-        int ID = 0;
+        String ID = "";
         private void DisplayData()
         {
             con.Open();
@@ -45,7 +45,7 @@ namespace AppEscritorioPortafolio
             txtUsuario.Text = "";
             txtPass.Text = "";
             txtEstado.Text = "";
-            ID = 0;
+            ID = "";
             btnCrear.Enabled = true;
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -53,7 +53,7 @@ namespace AppEscritorioPortafolio
         //dataGridView1 RowHeaderMouseClick Event  
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            ID = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtUsuario.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtPass.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtEstado.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -69,9 +69,9 @@ namespace AppEscritorioPortafolio
             {
                 if (txtUsuario.Text != "" && txtPass.Text != "")
                 {
-                    if (txtEstado.Text == "1" || txtEstado.Text == "0")
+                    if (txtEstado.Text == "1" || txtEstado.Text == "2")
                     {
-                        string codigo = "insert into Usuario (loginUsuario, pw, estado) values(:nombre,:pw,:estado) ";
+                        string codigo = "insert into Usuario (nombreusuario, pw, estado) values(:nombre,:pw,:estado) ";
                         cmd = new OracleCommand(codigo, con);
                         MessageBox.Show(codigo);
                         con.Open();
@@ -86,7 +86,7 @@ namespace AppEscritorioPortafolio
                     }else
                     {
                         con.Close();
-                        MessageBox.Show("El estado tiene que ser 1 o 0");
+                        MessageBox.Show("El estado tiene que ser 1 o 2");
                     }
                 }
                 else
@@ -110,18 +110,18 @@ namespace AppEscritorioPortafolio
                 
                 if (txtUsuario.Text != "" && txtPass.Text != "")
                 {
-                    if (txtEstado.Text == "1" || txtEstado.Text =="0")
+                    if (txtEstado.Text == "1" || txtEstado.Text =="2")
                     {
 
 
-                        string update = "update Usuario set loginUsuario = :nombre, pw =:pass, estado=:estado where loginUsuario = :id";
+                        string update = "update Usuario set nombreusuario = :nombre, pw =:pass, estado=:estado where nombreusuario = :id";
                         cmd = new OracleCommand(update, con);
 
                         con.Open();
                         cmd.Parameters.Add(":nombre", txtUsuario.Text);
                         cmd.Parameters.Add(":pass", txtPass.Text);
                         cmd.Parameters.Add(":estado", Convert.ToInt32(txtEstado.Text));
-                        cmd.Parameters.Add(":id", txtUsuario.Text);
+                        cmd.Parameters.Add(":id", ID);
                         MessageBox.Show(ID + txtUsuario.Text + update);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Datos Actualizados");
@@ -132,7 +132,7 @@ namespace AppEscritorioPortafolio
                     }else
                     {
                         con.Close();
-                        MessageBox.Show("El estado tiene que ser 1 o 0");
+                        MessageBox.Show("El estado tiene que ser 1 o 2");
                     }
                 }
                 else
@@ -156,11 +156,11 @@ namespace AppEscritorioPortafolio
             {
                 if (txtUsuario.Text != "")
                 {
-                    string codigo = "delete Usuario where loginUsuario=:id";
+                    string codigo = "delete Usuario where nombreusuario=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
-                    cmd.Parameters.Add(":id", txtUsuario.Text);
+                    cmd.Parameters.Add(":id", ID);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Borrado Correctamente!");

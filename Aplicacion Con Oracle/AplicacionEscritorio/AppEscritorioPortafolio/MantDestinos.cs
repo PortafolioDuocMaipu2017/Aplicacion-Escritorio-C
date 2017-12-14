@@ -21,7 +21,7 @@ namespace AppEscritorioPortafolio
             DisplayData();
         }
         ///string ConString = "Data Source=XE;User Id=system;Password=12345;";
-        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=system;Password=12345;");
+        OracleConnection con = new OracleConnection(@"Data Source=XE;User Id=PORTAFOLIO2;Password=12345;");
 
         OracleCommand cmd;
         OracleCommand cmd2;
@@ -40,19 +40,7 @@ namespace AppEscritorioPortafolio
                 con.Close();
                 btnActualizar.Enabled = false;
                 btnEliminar.Enabled = false;
-
-                //Mostrar ComboBox
-                con.Open();
-                DataTable dt2 = new DataTable();
-                adapt = new OracleDataAdapter("select * from Pais", con);
-                adapt.Fill(dt2);
-
-                cbPais.DataSource = dt2;
-                cbPais.DisplayMember = "nombrePais"; //campo que queres mostrar
-                cbPais.ValueMember = "codigoPais"; //valor que capturas
-                con.Close();
-                cbPais.Text = "Seleccione";
-
+                
                 //Try3
 
                 con.Open();
@@ -61,7 +49,7 @@ namespace AppEscritorioPortafolio
                 adapt.Fill(dt3);
                 cbCiudad.DataSource = dt3;
                 cbCiudad.DisplayMember = "ciudad"; //campo que queres mostrar
-                cbCiudad.ValueMember = "codigoCiudad"; //valor que capturas
+                cbCiudad.ValueMember = "idCiudad"; //valor que capturas
                 con.Close();
 
             }
@@ -87,9 +75,9 @@ namespace AppEscritorioPortafolio
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            cbPais.SelectedValue = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            txtDireccion.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             cbCiudad.SelectedValue = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-            txtDireccion.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtValor.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
             btnActualizar.Enabled = true;
@@ -101,13 +89,14 @@ namespace AppEscritorioPortafolio
             {
                 if (txtDireccion.Text != "")
                 {
-                    string codigo = "insert into Destino (codigopais, codigociudad, direccion) values(:pais,:ciudad,:direccion) ";
+                    string codigo = "insert into Destino (iddestino, nombredestino, ciudad_idciudad, valorDestino) values(1, :direccion,:ciudad,:valor) ";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
-                    cmd.Parameters.Add(":pais", cbPais.SelectedValue);
-                    cmd.Parameters.Add(":ciudad", cbCiudad.SelectedValue);
+                    
                     cmd.Parameters.Add(":direccion", txtDireccion.Text);
+                    cmd.Parameters.Add(":ciudad", cbCiudad.SelectedValue);
+                    cmd.Parameters.Add(":valor", Convert.ToInt32(txtValor.Text));
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos Actualizados");
                     con.Close();
@@ -133,13 +122,13 @@ namespace AppEscritorioPortafolio
             {
                 if (txtDireccion.Text != "")
                 {
-                    string update = "update Destino set codigopais = :pais, codigociudad =:ciudad, direccion =:direccion where codigoDestino = :id";
+                    string update = "update Destino set nombredestino =: direccion, ciudad_idciudad =:ciudad, valorDestino =:valor where idDestino = :id";
                     cmd = new OracleCommand(update, con);
 
                     con.Open();
-                    cmd.Parameters.Add(":pais", cbPais.SelectedValue);
-                    cmd.Parameters.Add(":ciudad", cbCiudad.SelectedValue);
                     cmd.Parameters.Add(":direccion", txtDireccion.Text);
+                    cmd.Parameters.Add(":ciudad", cbCiudad.SelectedValue);
+                    cmd.Parameters.Add(":valor", Convert.ToInt32(txtValor.Text));
                     cmd.Parameters.Add(":id", ID);
                     MessageBox.Show(ID + txtDireccion.Text + update);
                     cmd.ExecuteNonQuery();
@@ -169,7 +158,7 @@ namespace AppEscritorioPortafolio
             {
                 if (ID != 0)
                 {
-                    string codigo = "delete Destino where codigoDestino=:id";
+                    string codigo = "delete Destino where idDestino=:id";
                     cmd = new OracleCommand(codigo, con);
                     MessageBox.Show(codigo);
                     con.Open();
@@ -214,6 +203,12 @@ namespace AppEscritorioPortafolio
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
+            MantCiudad ciuda = new MantCiudad();
+            ciuda.Show();
+        }
+
+        private void btnAgregarCiudad_Click(object sender, EventArgs e)
+        {
             MantCiudad ciuda = new MantCiudad();
             ciuda.Show();
         }

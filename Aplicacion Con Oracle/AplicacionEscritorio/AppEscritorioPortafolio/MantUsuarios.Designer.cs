@@ -168,7 +168,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 42;
-            this.label5.Text = "0 = Deshabilitado";
+            this.label5.Text = "2 = Deshabilitado";
             // 
             // MantUsuarios
             // 

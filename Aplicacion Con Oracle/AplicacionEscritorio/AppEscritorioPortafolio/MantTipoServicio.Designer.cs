@@ -36,8 +36,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -118,22 +116,6 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // txtEmpresa
-            // 
-            this.txtEmpresa.Location = new System.Drawing.Point(138, 24);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(100, 20);
-            this.txtEmpresa.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Codigo Empresa";
-            // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(138, 77);
@@ -165,8 +147,6 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.txtEmpresa);
-            this.Controls.Add(this.label1);
             this.Name = "MantTipoServicio";
             this.Text = "MantTipoServicio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -185,8 +165,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.TextBox txtEmpresa;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label3;
     }
